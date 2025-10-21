@@ -1,6 +1,6 @@
 @define-color background #31323E;
-@define-color text_color #EDEBDD;
-@define-color text_accent #60519B;
+@define-color foreground #EDEBDD;
+@define-color fg_accent #60519B;
 
 * {
 	all: unset;
@@ -19,17 +19,18 @@ window {
 	margin: 24px;
 	padding: 12px;
 	border-radius: 10px;
-	border-bottom: 1.5px solid alpha(@text_color, 0.3);
-	color: @text_color;
+	border-bottom: 1.5px solid alpha(@foreground, 0.63);
+	color: @foreground;
 }
 #input image {
 	padding-right: 12px;
+	color: alpha(@foreground, 0.63);
 }
 #input:focus {
-	border-bottom: 1.5px solid @text_accent;
+	border-bottom: 1.5px solid @fg_accent;
 }
 #input:focus image {
-	color: @text_accent;
+	color: @fg_accent;
 }
 
 #outer-box {
@@ -49,9 +50,9 @@ window {
 	border-radius: 10px;
 }
 #entry:selected {
-	border-color: @text_accent;
-	background-color: alpha(@text_accent, 0.15);
+	border-color: @fg_accent;
+	background-color: alpha(@fg_accent, 0.15);
 }
 #entry:drop(active) {
-	background-color: @text_color !important;
+	background-color: @foreground !important;
 }
