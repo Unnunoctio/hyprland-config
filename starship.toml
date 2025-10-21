@@ -1,0 +1,170 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](bg_os)$os$username\
+[](bg:bg_directory fg:bg_os)$directory\
+[](fg:bg_directory bg:bg_git)$git_branch$git_status\
+[](fg:bg_git bg:bg_language)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:bg_language bg:bg_env)\
+$docker_context\
+$conda\
+$pixi\
+[](fg:bg_env bg:bg_time)$time[ ](fg:bg_time)\
+$line_break$character"""
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+background = '#31323E'
+foreground = '#EDEBDD'
+
+bg_os = '#60519B'
+bg_directory = '#0F1217'
+bg_git = '#27606C'
+bg_language = '#7BAAAB'
+bg_env = '#C68D5D'
+bg_time = '#C6BD8B'
+
+fg_error = '#C0191F'
+
+[os]
+disabled = false
+style = "bg:bg_os fg:foreground"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = true
+style_user = "bg:bg_os fg:foreground"
+style_root = "bg:bg_os fg:foreground"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:foreground bg:bg_directory"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Projects" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:bg_git"
+format = '[[ $symbol $branch ](fg:foreground bg:bg_git)]($style)'
+
+[git_status]
+style = "bg:bg_git"
+format = '[[($all_status$ahead_behind )](fg:foreground bg:bg_git)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[c]
+symbol = " "
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[php]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[java]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version) ](fg:foreground bg:bg_language)]($style)'
+
+[python]
+symbol = ""
+style = "bg:bg_language"
+format = '[[ $symbol( $version)( $virtualenv) ](fg:foreground bg:bg_language)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:bg_env"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:bg_env)]($style)'
+
+[conda]
+style = "bg:bg_env"
+format = '[[ $symbol( $environment) ](fg:#83a598 bg:bg_env)]($style)'
+
+[pixi]
+style = "bg:bg_env"
+format = '[[ $symbol( $version)( $environment) ](fg:foreground bg:bg_env)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:bg_time"
+format = '[[  $time ](fg:bg_directory bg:bg_time)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:bg_os)'
+error_symbol = '[](bold fg:fg_error)'
