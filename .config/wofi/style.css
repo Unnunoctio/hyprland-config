@@ -1,0 +1,57 @@
+@define-color background #31323E;
+@define-color text_color #EDEBDD;
+@define-color text_accent #60519B;
+
+* {
+	all: unset;
+	font-family: 'CodeNewRoman Nerd Font Mono';
+	font-size: 20px;
+	outline: none;
+	text-shadow: none;
+	background-color: transparent;
+}
+
+window {
+	background-color: alpha(@background, 0.65);
+}
+
+#input {
+	margin: 24px;
+	padding: 12px;
+	border-radius: 10px;
+	border-bottom: 1.5px solid alpha(@text_color, 0.3);
+	color: @text_color;
+}
+#input image {
+	padding-right: 12px;
+}
+#input:focus {
+	border-bottom: 1.5px solid @text_accent;
+}
+#input:focus image {
+	color: @text_accent;
+}
+
+#outer-box {
+	border: none;
+}
+#inner-box {
+	margin: 0px 24px 0px 24px;
+}
+#scroll {
+	padding: 0px 0px 24px 0px;
+}
+
+#entry {
+	margin: 4px 0px 4px 0px;
+	padding: 12px 16px 12px 16px;
+	border: 1.5px solid transparent;
+	border-radius: 10px;
+}
+#entry:selected {
+	border-color: @text_accent;
+	background-color: alpha(@text_accent, 0.15);
+}
+#entry:drop(active) {
+	background-color: @text_color !important;
+}
