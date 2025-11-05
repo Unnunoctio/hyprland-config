@@ -36,7 +36,7 @@ paru -S \
   cloudflare-warp-bin p7zip brave-bin \
   discord visual-studio-code-insiders-bin \
   otf-monaspace ttf-material-symbols-variable-git \
-  ttf-firacode-nerd
+  ttf-firacode-nerd ttf-joypixels
 ```
 
 ---
