@@ -13,9 +13,7 @@
   - **GPU Drivers:** `NVIDIA proprietary`
   - **Audio & Network:** `PipeWire`, `NetworkManager`, `Bluetooth`
 - Add the following to **packages**:
-  ```
-  git
-  ```
+  - `git`
 
 ---
 
@@ -33,11 +31,33 @@ makepkg -si
 paru -S \
   hyprpaper hyprpicker quickshell \
   gnome-keyring starship grimblast-git \
-  cloudflare-warp-bin p7zip brave-bin \
-  discord visual-studio-code-insiders-bin \
-  otf-monaspace ttf-material-symbols-variable-git \
-  ttf-firacode-nerd ttf-joypixels
+  cloudflare-warp-bin p7zip cliphist wl-clipboard \
+  brave-bin discord visual-studio-code-insiders-bin \
+  otf-monaspace ttf-firacode-nerd ttf-joypixels
 ```
+
+---
+
+### 🅰️ 4. Install `Material Symbols Font`
+
+- Go to: [https://materialdesignicons.com/](https://materialdesignicons.com/)
+- Download: `Material Symbols Rounded`
+- Extract zip file:
+  ```bash
+  7z x MaterialSymbols.zip
+  ```
+- Copy font to `/usr/share/fonts/`:
+  ```bash
+  sudo cp -r [folder]/*.ttf /usr/share/fonts/
+  ```
+- Update font cache:
+  ```bash
+  sudo fc-cache -fv
+  ```
+- Verify font:
+  ```bash
+  fc-list | grep "Material Symbols Rounded"
+  ```
 
 ---
 
@@ -110,6 +130,20 @@ eval "$(starship init bash)"
 Reload shell:
 ```bash
 source ~/.bashrc
+```
+
+---
+
+### 💻 Cloudflare Warp
+
+Start service:
+```bash
+sudo systemctl enable --now warp-svc
+```
+
+Login:
+```bash
+warp-cli registration new
 ```
 
 ---
