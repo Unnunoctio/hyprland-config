@@ -22,7 +22,7 @@ Loader {
 
         margins {
             left: parent.QsWindow?.mapFromItem(parent, 0, 0).x - (sectionPopup.width/2) + (parent.width/2)
-            top: Theme.space_10 + Theme.space_3
+            top: -Theme.space_05 + Theme.space_10 + Theme.space_3 
         }
 
         implicitWidth: sectionPopup.implicitWidth + Theme.space_4

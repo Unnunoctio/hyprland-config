@@ -57,4 +57,7 @@ QtObject {
     property int media_width: 200
 
     property int utility_width: 364
+
+    property int clipboard_tooltip_height: 350
+    property int clipboard_tooltip_text_width: 300
 }

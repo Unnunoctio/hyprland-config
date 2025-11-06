@@ -1,12 +1,15 @@
 import Quickshell
-import Quickshell.Hyprland
 import QtQuick
+import QtQuick.Layouts
 
 import qs.modules.common
+import qs.services
 import qs.theme
 
 
 Rectangle {
+    id: clipboardTool
+
     implicitWidth: Theme.space_7
     implicitHeight: Theme.space_7
 
@@ -26,9 +29,12 @@ Rectangle {
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
         hoverEnabled: true
-        
+
         onClicked: {
-            // Hyprland.dispatch("exec hyprpicker -a -n -r")
+            if (popupClipboard.active) return popupClipboard.active = false
+
+            Clipboard.load()
+            popupClipboard.active = true
         }
 
         onEntered: {
@@ -39,4 +45,6 @@ Rectangle {
             parent.color = Theme.transparent
         }
     }
+
+    ClipboardPopup { id: popupClipboard }
 }
