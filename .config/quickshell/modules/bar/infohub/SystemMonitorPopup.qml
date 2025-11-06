@@ -72,7 +72,7 @@ Loader {
                             icon: "memory"
                             color: Theme.fg_sec
                             size: Theme.info_icon_size
-                            // is_filled: true
+                            is_filled: true
                         }
                         StyledText {
                             text: "RAM"

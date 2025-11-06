@@ -47,7 +47,7 @@ MouseArea {
                         icon: "memory"
                         color: Theme.bg_box
                         size: Theme.info_icon_size
-                        // is_filled: true
+                        is_filled: true
                     }
                 }
 

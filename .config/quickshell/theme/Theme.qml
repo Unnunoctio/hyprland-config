@@ -23,6 +23,7 @@ QtObject {
     property string font_icon_material_filled: "Material Symbols Rounded Filled"
 
     // TODO: SPACE
+    property int space_05: 2
     property int space_1: 4
     property int space_2: 8
     property int space_3: 12
@@ -51,4 +52,9 @@ QtObject {
     property int lateral_section_width: 450
 
     property int popup_text_size: 15
+
+    property int media_margin: 6
+    property int media_width: 200
+
+    property int utility_width: 364
 }

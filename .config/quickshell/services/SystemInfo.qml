@@ -4,6 +4,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
+
 Item {
     property real cpu_usage: 0
     property real memory_total: 1

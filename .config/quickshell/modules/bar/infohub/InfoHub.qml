@@ -7,6 +7,7 @@ import qs.theme
 
 Rectangle {
     anchors.fill: parent
+    
     implicitWidth: layoutInfoHub.implicitWidth
 
     color: Theme.bg_box
@@ -17,7 +18,7 @@ Rectangle {
         id: layoutInfoHub
 
         anchors.fill: parent
-        spacing: Theme.space_2
+        spacing: Theme.space_1
 
         // RAM & CPU
         Item {
@@ -29,13 +30,10 @@ Rectangle {
 
         // MEDIA PLAYER
         Item {
-            implicitWidth: 100
+            implicitWidth: sectionMediaPlayer.implicitWidth
             implicitHeight: Theme.space_8
 
-            Rectangle {
-                anchors.fill: parent
-                color: "#0000ff"
-            }
+            MediaPlayer { id: sectionMediaPlayer }
         }
     }
 }
