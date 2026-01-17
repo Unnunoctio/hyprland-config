@@ -33,7 +33,7 @@ paru -S \
   gnome-keyring starship grimblast-git \
   cloudflare-warp-bin p7zip cliphist wl-clipboard \
   brave-bin discord visual-studio-code-insiders-bin \
-  otf-monaspace ttf-firacode-nerd ttf-joypixels
+  otf-monaspace ttf-jetbrains-mono-nerd ttf-joypixels
 ```
 
 ---
